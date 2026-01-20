@@ -144,10 +144,13 @@
     keyboards = {
       default = {
         extraConfig = ''
-          	[ids]
-          		0002:000a:83b21bac
-          	[main]
-          		middlemouse = leftmeta
+          [ids]
+          	0002:000a:83b21bac
+          	0fac:0ade:bea394c0
+          [main]
+          	middlemouse = leftmeta
+          	leftmouse = backspace
+          	capslock = overload(control, esc)
         '';
       };
     };
