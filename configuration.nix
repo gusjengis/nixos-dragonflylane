@@ -7,6 +7,10 @@
   ...
 }:
 {
+  imports = [
+    ./tailscale.nix
+  ];
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
