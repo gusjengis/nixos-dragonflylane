@@ -8,7 +8,7 @@
 }:
 
 let
-  sharedKeyPath = "/home/gusjengis/.config/secrets/ssh/shared_ed25519.pub";
+  sharedKeyPath = "/home/dragonflylane/.config/secrets/ssh/shared_ed25519.pub";
 in
 {
   imports = [
