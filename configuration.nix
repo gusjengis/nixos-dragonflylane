@@ -6,6 +6,10 @@
   stable,
   ...
 }:
+
+let
+  sharedKeyPath = "/home/gusjengis/.config/secrets/ssh/shared_ed25519.pub";
+in
 {
   imports = [
     ./tailscale.nix
@@ -123,6 +127,9 @@
       "dialout"
     ];
     packages = with pkgs; [ home-manager ];
+    openssh.authorizedKeys.keys = lib.optionals (builtins.pathExists sharedKeyPath) [
+      (lib.strings.removeSuffix "\n" (builtins.readFile sharedKeyPath))
+    ];
   };
 
   services.fwupd.enable = true;
